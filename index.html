@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDG Marketing - Merry Christmas Lottery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@400;700&display=swap');
+      
+      :root {
+        --neon-red: #ff0000;
+        --neon-green: #00ff00;
+        --neon-blue: #0088ff;
+      }
+
+      body {
+        font-family: 'Orbitron', sans-serif;
+        background-color: #050505;
+        color: #e0e0e0;
+      }
+      
+      /* Snow animation */
+      @keyframes snowfall {
+        0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+        20% { opacity: 0.8; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0.2; }
+      }
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        text-shadow: 0 0 5px #fff;
+        pointer-events: none;
+        animation: snowfall linear infinite;
+        z-index: 50;
+      }
+
+      /* Meteor Animation */
+      @keyframes meteor {
+        0% { transform: translateX(300px) translateY(-300px); opacity: 1; }
+        70% { opacity: 1; }
+        100% { transform: translateX(-500px) translateY(500px); opacity: 0; }
+      }
+      .meteor {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        box-shadow: 0 0 10px 2px white;
+        opacity: 0;
+        transform: rotate(45deg);
+        animation: meteor 3s linear infinite;
+      }
+      .meteor::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(90deg, white, transparent);
+        right: 0;
+      }
+
+      /* Lightsaber Glow */
+      .sith-glow {
+        box-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red), 0 0 20px var(--neon-red), inset 0 0 5px var(--neon-red);
+      }
+      .jedi-glow {
+        box-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), inset 0 0 5px var(--neon-green);
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
+  }
+}
+</script>
+</head>
+  <body class="overflow-x-hidden">
+    <div id="root"></div>
+  </body>
+</html>

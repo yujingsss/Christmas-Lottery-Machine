@@ -1,0 +1,5 @@
+{
+  "name": "Merry Christmas Lottery",
+  "description": "A festive photo lottery machine that randomly selects photos from your uploaded pool.",
+  "requestFramePermissions": []
+}
